@@ -59,9 +59,9 @@ async function renderPosts(){
 async function submitPost(request) {
   const response = await fetch(postsApi, request);
   if (response.status === 200) {
-    const result = await response.json().data;
+    const result = await response.json();
     // update post
-    updatePosts(result);
+    updatePosts(result.data);
   } else {
     console.log('fail to post');
   };

@@ -26,7 +26,6 @@ const s3 = new S3Client({
 
 
 router.get('/posts', async(req, res) => {
-  
   const allPostsSql = 'SELECT * FROM ??';
   pool.query(allPostsSql, ['posts'], (err, results)=>{
     if (err) {

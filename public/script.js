@@ -43,11 +43,17 @@ submitBtn.addEventListener('click', (e) => {
 async function renderPosts(){
   const response = await fetch(postsApi);
   const results = await response.json();
-  if (results.data.length === 0) return
-  results.data.forEach(post => {
-    updatePosts(post);
-  });
+  try {
+    if (results.data.length === 0) return
+    results.data.forEach(post => {
+      updatePosts(post);
+    });
+  } catch(error) {
+    console.log(`Error: ${error}`);
+    return
+  }
 };
+
 
 
 async function submitPost(request) {

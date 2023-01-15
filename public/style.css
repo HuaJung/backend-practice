@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Kalam:wght@300;400;700&display=swap');
+
+
+[class*="grid-"] {
+  display: grid;
+  gap: 30px;
+}
+
+* {
+  
+  font-family: 'Caveat', cursive;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  background-color: rgb(231, 227, 222);
+}
+body {
+  padding-top: 80px;
+}
+.navbar {
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: papayawhip;
+  height: 50px;
+  padding: 40px;
+  box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.2);
+}
+.navbar h1 {
+  background-color: papayawhip;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 60px auto;
+}
+form {
+  margin: 0 40px;
+  padding: 30px;
+  /* border: 1px solid burlywood; */
+  border-radius: 30px;
+  box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.2);
+}
+label, button, input, p {
+  font-size: 18px;
+  font-family: 'Kalam', cursive;
+
+}
+input[type=text] {
+  box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+  background-color: rgb(239, 236, 233);
+  border: none;
+  border-radius: 7px;
+  margin-left: 10px;
+  padding: 0 10px;
+}
+input[type=file] {
+  opacity: 0;
+}
+
+button, .image.btn {
+  cursor: pointer;
+}
+.image.btn{
+  font-size: 16px;
+  margin-left: 10px;
+  padding: 0px 15px;
+  border-radius: 100px;
+  box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.2);
+  border: 1px solid gainsboro;
+  background-color: rgb(239, 236, 233);
+}
+.submit.btn button {
+  padding: 10px 20px;
+  border-radius: 100px;
+  box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.2);
+  border: 1px solid gainsboro;
+  background-color: rgb(239, 236, 233);
+}
+.grid-message {
+  margin: 40px;
+  padding: 30px;
+}
+.message-items{
+  padding: 10px;
+  border-bottom: 5px solid;
+  border-image: linear-gradient(135deg, rgb(217, 209, 198), rgba(218, 196, 163, 0.663));
+  border-image-slice: 1;
+}
+img {
+  width: 300px;
+  border-radius: 10%;
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.message-items p {
+  padding: 20px 10px;
+}

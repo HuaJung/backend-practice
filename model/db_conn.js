@@ -2,12 +2,16 @@ import mysql from 'mysql2';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const connection = mysql.createConnection({
+
+const pool = mysql.createPool({
   host: process.env.RDS_HOSTNAME,
   user: process.env.RDS_USERNAME,
-  database: process.env.DATABSE_NAME,
+  database: process.env.DATABASE_NAME,
+  password:process.env.RDS_PASSWORD,
   port: process.env.RDS_PORT,
-  password: process.env.RDS_PASSWORD
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
 
-export{ connection }
+export{pool}

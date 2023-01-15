@@ -3,9 +3,7 @@ import { S3Client, PutObjectCommand, GetObjectCommand } from "@aws-sdk/client-s3
 import dotenv from 'dotenv';
 import crypto from 'crypto';
 import multer from 'multer';
-// import {pool} from '../model/db_conn.js';
-
-import {connection} from '../model/db_conn.js';
+import {pool} from '../model/db_conn.js';
 
 dotenv.config();
 
@@ -29,7 +27,7 @@ const s3 = new S3Client({
 
 router.get('/posts', async(req, res) => {
   const allPostsSql = 'SELECT * FROM ??';
-  connection.query(allPostsSql, ['posts'], (err, results)=>{
+  pool.query(allPostsSql, ['posts'], (err, results)=>{
     if (err) {
       return res.json({error: err});
     };
@@ -41,7 +39,7 @@ router.get('/posts', async(req, res) => {
       };
       posts.push(post);
     };
-    return res.json({data: posts})
+    res.json({data: posts})
   });
 });
 
@@ -61,7 +59,7 @@ router.post('/posts', upload.single('file'),async (req, res) => {
    // save image & message in RDS
    const sql = 'INSERT INTO posts (message, image_name) VALUES (?, ?)'
    const msg = req.body.message;
-   connection.query(sql, [msg, imageName], (err, results) => {
+   pool.query(sql, [msg, imageName], (err, results) => {
     if (err) {
       console.error('Database connection failed: ', err);
       return;

@@ -16,15 +16,11 @@
       <h2>Say something about your picture</h2>
       <div class="form-items">
         <label for="message">Message:</label>
-        <input type="text" id="message" required>
+        <input type="text" id="message" placeholder="I love panda!" required>
       </div>
       <div class="form-items">
         <label>Choose an image to upload:</label>
         <label for="image" class="image btn">Choose</label>
-        <input 
-          type="file"
-          accept=".jpg, .jpeg, .png"
-          id="image">
       </div>
       <div class="preview">
         <p>No files currently selected for upload</p>
@@ -32,6 +28,10 @@
       <div class="submit btn">
         <button type="submit">Submit</button>
       </div>
+      <input 
+      type="file"
+      accept=".jpg, .jpeg, .png"
+      id="image">
     </form>
     
     <div class="grid-message">

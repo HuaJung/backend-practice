@@ -7,7 +7,6 @@
 }
 
 * {
-  
   font-family: 'Caveat', cursive;
   padding: 0;
   margin: 0;
@@ -42,22 +41,32 @@ body {
 }
 form {
   margin: 0 40px;
-  padding: 30px;
+  padding: 30px 30px 0 30px;
   /* border: 1px solid burlywood; */
   border-radius: 30px;
   box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.2);
+  grid-template-columns: auto;
 }
+h2, .form-items label, .preview p {
+  overflow-wrap: break-word;
+}
+.form-items label:first-child {
+  margin-right: 10px;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
 label, button, input, p {
   font-size: 18px;
   font-family: 'Kalam', cursive;
-
 }
+
 input[type=text] {
   box-shadow: 0 0 3px rgba(0, 0, 0, .2);
   background-color: rgb(239, 236, 233);
   border: none;
   border-radius: 7px;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   padding: 0 10px;
 }
 input[type=file] {
@@ -68,13 +77,13 @@ button, .image.btn {
   cursor: pointer;
 }
 .image.btn{
-  font-size: 16px;
-  margin-left: 10px;
   padding: 0px 15px;
+  margin-right: 20px;
   border-radius: 100px;
   box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.2);
   border: 1px solid gainsboro;
   background-color: rgb(239, 236, 233);
+  display: inline-block;
 }
 .submit.btn button {
   padding: 10px 20px;
